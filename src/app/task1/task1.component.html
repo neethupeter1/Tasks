@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h5>Task1</h5>
+  
+  <button class="btn btn-success btn-sm" (click)="disp1()" type="button" id="button"> Button</button>
+    
+  <div  *ngIf="toggleLoop">
+    <div *ngFor="let number of numbers" [ngStyle]="{'color':'gray'}">{{number}}</div>
+   </div>
+
+  
+  
+</div>

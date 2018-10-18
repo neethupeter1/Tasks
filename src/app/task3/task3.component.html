@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col">
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputImg" accept="image/*" (change)="onFileChange($event)">
+            <label class="custom-file-label" for="inputImg">Choose Image</label>
+          </div>
+          <div class="input-group-append">
+            <button class="btn btn-light" type="button" (click)="onRotate()">Rotate</button>
+          </div>
+          <div class="input-group-append">
+            <a [href]="imageSrc" class="btn btn-light" download="image.png">Save</a>
+          </div>
+        </div>
+    </div>
+  </div>
+  <img *ngIf="imageSrc" [src]="imageSrc" id="image" class="img-thumbnail" alt="Responsive image" #imageView>
+  <canvas id="canvas" #canvasView></canvas>
+
+  <!-- attach an event (variable name)= call a functionand attach $event to get the data -->
+  <div class="container" [ngStyle]="{'margin-top':'10px'}">
+  </div>
+  <div class="container">
+    <app-image-control [consumeData]="parentChild" (voted)="onVoted($event)"></app-image-control>
+  </div>
+  <p>{{content}}</p>
+  
+  
