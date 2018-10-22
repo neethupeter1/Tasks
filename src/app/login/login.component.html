@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="panel panel-success">
+    <div class="panel-heading">Login Form</div>
+    <div class="panel-body">
+      <form #taskForm="ngForm">
+        <div class="form-group">
+          <label class="control-label">Firstname</label>
+          <input type="text" required minlength="5" class="form-control" placeholder="Firstname" 
+            #firstnameVar="ngModel" [(ngModel)]="user.firstname" name="firstname" />
+        </div>
+        <div *ngIf="!firstnameVar.valid && firstnameVar.touched">
+        <div class="alert alert-danger" *ngIf="firstnameVar.errors.required">Please enter firstname</div>
+        <div class="alert alert-danger" *ngIf="firstnameVar.errors.minlength">Firstname at least 5 character</div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Lastname</label>
+          <input type="text" required minlength="5" class="form-control" placeholder="Lastname" 
+            #lastnameVar="ngModel" [(ngModel)]="user.lastname" name="lastname" />
+        </div>
+        <div *ngIf="!lastnameVar.valid && lastnameVar.touched">
+          <div class="alert alert-danger" *ngIf="lastnameVar.errors.required" >Please enter Lastname</div>
+          <div class="alert alert-danger"*ngIf="lastnameVar.errors.minlength" >Lastname at least 5 character</div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Email</label>
+          <input type="text" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" class="form-control" placeholder="Email" 
+            #emailVar="ngModel" [(ngModel)]="user.email" name="email" />
+        </div>
+        <div *ngIf="!emailVar.valid && emailVar.touched">
+          <div class="alert alert-danger" *ngIf="emailVar.errors.required">Please enter email</div>
+          <div class="alert alert-danger" *ngIf="emailVar.errors.pattern">Enter valid email</div>
+        </div>
+        <button type="button" class="btn btn-success" [disabled]="!taskForm.valid" (click)="enter()">Enter</button>
+      </form>
+    </div>
+  </div>
+</div>
+
