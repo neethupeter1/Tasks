@@ -17,6 +17,10 @@ export class LoginComponent implements OnInit {
   }
 
   enter() {
-   console.log(this.user);
+    if(this.user) {
+      this._router.navigate(['/task1']);
+      console.log(this.user);
+    }
+   
   }
 }
