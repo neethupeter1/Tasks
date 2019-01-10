@@ -3,9 +3,13 @@
     <div class="col">
       <div class="input-group">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="img_upload" (change)="onFileChange($event)" multiple accept="image/*">
           <label class="custom-file-label" for="img_upload">Choose Images</label>
+          <input type="file" class="custom-file-input" id="img_upload" (change)="onFileChange($event)" multiple accept="image/*">
         </div>
+        
+<br clear="all">
+<br clear="all">
+
         <div class="input-group-append">
           <button class="btn btn-light" [ngClass]="{'active': checked}" type="button" data-toggle="buttons" (click)="checked = !checked"
                   aria-pressed="false" autocomplete="off">Custom Size</button>
@@ -22,4 +26,19 @@
     </div>
   </div>
   <h3 *ngIf="images.length === 0">No images currently selected !!!</h3>
+</div>
+
+
+<br clear="all">
+<br clear="all">
+<br clear="all">
+
+<div>
+  {{nextValue}}
+</div>
+
+
+<div>
+  <button class="btn btn-primary" (click) = "Subjectbtn($)">Subject</button>
+  
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Observer } from 'rxjs';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -8,6 +9,7 @@ import { Observer } from 'rxjs';
 })
 export class LoadImagesService {
 
+  $authCheck = new Subject();
   constructor() { }
 
   loadImage(images: Array<File>): Observable<any> {

@@ -18,11 +18,16 @@
   <canvas id="canvas" #canvasView></canvas>
 
   <!-- attach an event (variable name)= call a functionand attach $event to get the data -->
-  <div class="container" [ngStyle]="{'margin-top':'10px'}">
+  <div [ngStyle]="{'margin-top':'10px', 'background-color': '#d4d4d4', 'width': '25%'}">
+    ngStyle
   </div>
+
+
   <div class="container">
     <app-image-control [consumeData]="parentChild" (voted)="onVoted($event)"></app-image-control>
   </div>
-  <p>{{content}}</p>
+<br clear="all">
+
+  <div>{{content}}</div>
   
   

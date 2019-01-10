@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadImagesService } from '../services/load-images.service';
 
 @Component({
   selector: 'app-task1',
@@ -11,7 +12,7 @@ export class Task1Component implements OnInit {
   toggleLoop: Boolean = false;
   
 
-  constructor() { }
+  constructor( private _LoadImagesService: LoadImagesService) { }
 
   ngOnInit() {
     this.numbers = [];
@@ -32,5 +33,11 @@ export class Task1Component implements OnInit {
         this.numbers.push(i); 
       } 
     }
+  }
+
+  
+  onActivate() {
+    this._LoadImagesService.$authCheck.next(this.numbers);
+    console.log(this.numbers);
   }
 }
